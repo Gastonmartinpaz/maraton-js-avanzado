@@ -57,29 +57,41 @@
 // a) Mostrar la siguiente infomación de alumnos en una web.
 // b) Mostrar en verde quienes pagaron y en rojo quienes no pagaron.
 
-// const alumnos =[
+const alumnos =[
  
-//     {
-//            "nombre": "Juana",
-//            "pago": true
-//        },
-//        {
-//            "nombre": "Santiago",
-//            "pago": true
-//        },
-//        {
-//            "nombre": "Esteban",
-//            "pago": false
-//        },
-//        {
-//            "nombre": "Lautaro",
-//            "pago": true
-//        },
-//        {
-//            "nombre": "Marian",
-//            "pago": false
-//        }
-//    ]
+    {
+           "nombre": "Juana",
+           "pago": true
+       },
+       {
+           "nombre": "Santiago",
+           "pago": true
+       },
+       {
+           "nombre": "Esteban",
+           "pago": false
+       },
+       {
+           "nombre": "Lautaro",
+           "pago": true
+       },
+       {
+           "nombre": "Marian",
+           "pago": false
+       }
+   ]
+
+const comprobarPago = () => {
+    for (i=0; i<alumnos.length; i++){
+        if((alumnos[i].pago) === true){
+            document.write(`<p class="verde">${alumnos[i].nombre}</p>`);
+        } else{
+            document.write(`<p class="rojo">${alumnos[i].nombre}</p>`);
+        }
+    }
+}
+
+comprobarPago();
 
 // const nombres = alumnos.map(x => x.nombre);
 
@@ -101,57 +113,122 @@
 // Mail: Debe ser un mail válido. Solo se aceptan participantes con mails que terminen en “.com” o “.ar” 
 // Mensaje para Messi: Debe contener al menos 30 caracteres.
 
-const nombre = document.getElementById('nombre');
-const edad = document.getElementById('edad');
-const equipo = document.getElementById('equipo');
-const dni = document.getElementById('dni');
-const mail = document.getElementById('mail');
-const mensaje = document.getElementById('mensaje');
-const errorElement = document.getElementById('error');
-const form = document.getElementById('form');
+// const nombre = document.getElementById('nombre');
+// const edad = document.getElementById('edad');
+// const equipo = document.getElementById('equipo');
+// const dni = document.getElementById('dni');
+// const mail = document.getElementById('mail');
+// const mensaje = document.getElementById('mensaje');
+// const errorElement = document.getElementById('error');
+// const form = document.getElementById('form');
 
-function validarEmail(email)
-{
-  let caracteresEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-  if (email.match(caracteresEmail)) {
-    return true; 
-  } else {
-    return false; 
-  }
-}
+// function validarEmail(email)
+// {
+//   let caracteresEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+//   if (email.match(caracteresEmail)) {
+//     return true; 
+//   } else {
+//     return false; 
+//   }
+// }
 
-form.addEventListener('submit', (e) => {
-    let validaciones = [];
-    if(nombre.value === '' || nombre.value == null){
-        validaciones.push('El nombre es requerido');
-    }
 
-    if(nombre.value < 3 || nombre.value > 16){
-        validaciones.push('El nombre debe tener minimo 3 caracteres y máximo 16')
-    }
+// form.addEventListener('submit', (e) => {
+//     let validaciones = [];
+//     if(nombre.value === '' || nombre.value == null){
+//         validaciones.push('El nombre es requerido');
+//     }
 
-    if(equipo.value.match(".*\\d.*")){
-        validaciones.push('Equipo no debe contener números');
-    }
+//     if(nombre.value < 3 || nombre.value > 16){
+//         validaciones.push('El nombre debe tener minimo 3 caracteres y máximo 16');
+//     }
 
-    if(edad.value < 18){
-        validaciones.push('Debe ser mayor de edad para participar');
-    }
+//     if(equipo.value.match(".*\\d.*")){
+//         validaciones.push('Equipo no debe contener números');
+//     }
 
-    if(dni.value.length < 7 || dni.value.length > 8){
-        validaciones.push('El dni debe tener entre 7 y 8 caracteres')
+//     if(edad.value < 18){
+//         validaciones.push('Debe ser mayor de edad para participar');
+//     }
 
-    }
+//     if(dni.value.length < 7 || dni.value.length > 8){
+//         validaciones.push('El dni debe tener entre 7 y 8 caracteres');
 
-    if(validarEmail(mail.value) === false){
-        validaciones.push('Email invalido');
-    }
+//     }
 
-    if(validaciones.length > 0){
-        e.preventDefault();
-        errorElement.innerText = validaciones.join(', ');
-    }
-})
+//     if(validarEmail(mail.value) === false){
+//         validaciones.push('Email invalido');
+//     }
+
+//     if(validaciones.length > 0){
+//         e.preventDefault();
+//         errorElement.innerText = validaciones.join(', ');
+//     }
+// })
+
+
+// 6) Papá Noel recibió una cantidad enorme de cartitas este año, por lo que no tuvo tiempo de decidir quienes habían sido buenos o malos, así que decidió armar un sistema de clasificación automático. Si el niño o niña pidió 3 o más de los siguientes objetos, será catalogado como “malo” y se le entregará carbón en navidad. Si pidió 2 o menos, entonces será catalogado como bueno. Los objetos que suman son:
+// * Bicicleta, hermano/a/e, playstation, medias, mochila, piano*.
+// -Para probar: Generar algún set de pruebas. Pueden usar objetos y/o arreglos. 
+
+const objetos = ['bicicleta', 'hermano', 'playstation', 'medias', 'mochila', 'piano'];
+
+// const pedidos = [
+//     {nombre: 'Sofia', regalos: objetos[0, 4] },
+//     {nombre: 'Victor', regalos: objetos[3, 1, 5]},
+//     {nombre: 'Goku', regalos: objetos[0, 2, 5, 3]},
+//     {nombre: 'Homero', regalos: objetos[2]},
+//     {nombre: 'Daiana', regalos: objetos[3, 5, 0, 1]},
+// ]
+
+// console.log(pedidos);
+
+
+// 7) Organizar asados es una tarea difícil cuando se trata de calcular la cantidad de comida y repartir los costos. Para eso, un grupo de amigos nos solicita que realicemos un programa que nos ayude a dividir la tarea. 
+// Se calcula: 500gr de carne por persona. 1 Botella de cerveza por persona. 1 kilo de helado cada 4 personas. En caso de quedar por ejemplo: 1 kilo y medio, redondear siempre para arriba, es decir a dos kilos. 
+// El programa debe recibir como dato la cantidad de comensales y debe devolver: Cantidad de carne, cervezas y helado para comprar, costo total y costo por persona. 
+// Costos:
+// * Carne por kilo: $700
+// * Botella de cerveza: $200
+// * Kilo de helado: $600
+// Por ejemplo: Si son 5 personas serán:
+// - 2.5kg de carne, 5 botellas de cerveza y 2 kilos de helado.
+// - Precio total: $1750 de carne + $1000 de cervezas, $1200 de helado. Total: $3950. 
+// - Precio por persona: $790.
+
+
+// const carne = 0.5 // por persona
+// const cerveza = 1 // por persona
+// const helado = 1 // cada cuatro personas
+// const precioCarne = 700 // por medio kilo
+// const precioCerveza = 200
+// const precioHelado = 600
+
+// const calculo = () => {
+//     const personas = document.getElementById('personas').value; // no me tomaba el value fuera de la funcion
+//     let calculoCarne = personas * carne; 
+//     let calculoCerveza = personas * cerveza;
+//     let calculoHelado;
+//     if(personas >= 4){
+//         calculoHelado = Math.ceil(personas/4);
+//     } else{
+//         calculoHelado = 0;
+//     }
+
+//     let totalCarne = calculoCarne * precioCarne;
+//     let totalCerveza = calculoCerveza * precioCerveza;
+//     let totalHelado = calculoHelado * precioHelado;
+//     let total = totalCarne + totalCerveza + totalHelado;
+//     let precioPersona = (total / personas).toFixed(2);
+
+//     document.write(`<p>- ${calculoCarne}kg de carne, ${calculoCerveza} botellas de cerveza y ${calculoHelado} kilos de helado.</p>`);
+//     document.write(`<p>- Precio total: $${totalCarne} de carne + $${totalCerveza} de cervezas, $${totalHelado} de helado. Total: $${total}.</p>`);
+//     document.write(`<p>- Precio por persona: $${precioPersona}.</p>`);
+// }
+
+
+
+
 
 
 
