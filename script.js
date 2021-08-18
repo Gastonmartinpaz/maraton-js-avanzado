@@ -53,6 +53,72 @@
 //     }
 // }
 
+// 3) En un juego de mesa, necesitan implementar un sistema de puntos que sea justo para decidir quién arranca. Para esto, cada jugador tirará 4 veces el dado (del 1 al 6). Luego, se hará la suma de los 4 dados. Quien haya sacado más puntuación será quien inicie el juego. Nota: A los jugadores se los identificado con “jugador 1, 2, etc…” Según el órden en el cuál tiraron.
+
+
+// const desactivarBoton = () => {
+//     const botones = document.getElementsByTagName("button");
+//     for (let i = 0; i < botones.length; i++) {
+//       botones[i].disabled = true;
+//     }
+// }
+
+// const tirarDado = () => {
+//     let total = 0;
+//     for(i=0; i<4; i++){
+//         total = (Math.round(Math.random() * 5) + 1) + total;
+//     }
+//     return total;
+//     // console.log(total);
+// }
+
+// const desactivarBtn1 = () => {
+//     document.getElementById("dado1").disabled = true;
+// }
+
+// const desactivarBtn2 = () => {
+//     document.getElementById("dado2").disabled = true;
+// }
+
+// const desactivarBtn3 = () => {
+//     document.getElementById("dado3").disabled = true;
+// }
+
+// const desactivarBtn4 = () => {
+//     document.getElementById("dado4").disabled = true;
+// }
+
+// const totalDados1 = () => {
+//     const resultado1 = document.getElementById('resultado1');
+//     resultado1.value = tirarDado();
+//     desactivarBtn1();
+// }
+
+// const totalDados2 = () => {
+//     const resultado2 = document.getElementById('resultado2');
+//     resultado2.value = tirarDado();
+//     desactivarBtn2();
+// }
+// const totalDados3 = () => {
+//     const resultado3 = document.getElementById('resultado3');
+//     resultado3.value = tirarDado();
+//     desactivarBtn3();
+// }
+// const totalDados4 = () => {
+//     const resultado4 = document.getElementById('resultado4');
+//     resultado4.value = tirarDado();
+//     desactivarBtn4();
+// }
+
+// const ganador = () => {
+//     const jugador1 = document.getElementById('resultado1').value;
+//     const jugador2 = document.getElementById('resultado2').value;
+//     const jugador3 = document.getElementById('resultado3').value;
+//     const jugador4 = document.getElementById('resultado4').value;
+//     const masGrande = Math.max(jugador1, jugador2, jugador3, jugador4);
+
+//     document.write(`El número más grande es ${masGrande}`);
+// }
 // 4) Una escuela de tango necesita organizar las inscripciones de sus alumnos.
 // a) Mostrar la siguiente infomación de alumnos en una web.
 // b) Mostrar en verde quienes pagaron y en rojo quienes no pagaron.
